@@ -1,0 +1,4 @@
+/yarn.lock
+/dist/
+*.log
+node_modules/

@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UnusedFilesWebpackPlugin = require("unused-files-webpack-plugin").UnusedFilesWebpackPlugin;
 const node_path = path.join(__dirname, 'node_modules');
 
 const css_loader = ExtractTextPlugin.extract('style', 'css?sourceMap');
@@ -14,23 +15,10 @@ const languages = ['en', 'es', 'fr'];
 module.exports = {
     entry: {
         admin: './js/admin.js',
-        dataset: './js/front/dataset',
-        territory: './js/front/territory',
-        reuse: './js/front/reuse',
-        site: './js/front/site.js',
-        home: './js/front/home.js',
-        search: './js/front/search.js',
-        dashboard: './js/front/dashboard.js',
-        apidoc: './js/front/apidoc',
-        organization: './js/front/organization',
-        covermap: './js/front/covermap',
-        topic: './js/front/topic',
-        post: './js/front/post',
-        user: './js/front/user',
     },
     output: {
-        path: path.join(__dirname, 'udata', 'static'),
-        publicPath: '/static/',
+        path: path.join(__dirname, 'dist'),
+        publicPath: '/dist/',
         filename: '[name].js',
         chunkFilename: 'chunks/[id].[hash].js'
     },
@@ -89,10 +77,6 @@ module.exports = {
         // Only include needed translations
         new webpack.ContextReplacementPlugin(/moment\/locale$/, new RegExp('^' + languages.join('|') + '$')),
         new webpack.ContextReplacementPlugin(/locales$/, new RegExp(languages.join('|'))),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'common',
-            filename: 'common.js',
-            minChunks: 10,  // (Modules must be shared between 10 entries)
-        })
-    ]
+        new UnusedFilesWebpackPlugin(),
+      ]
 };

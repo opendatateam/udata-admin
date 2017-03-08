@@ -2,7 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const UnusedFilesWebpackPlugin = require("unused-files-webpack-plugin").UnusedFilesWebpackPlugin;
 const node_path = path.join(__dirname, 'node_modules');
 
 const css_loader = ExtractTextPlugin.extract('style', 'css?sourceMap');
@@ -77,6 +76,5 @@ module.exports = {
         // Only include needed translations
         new webpack.ContextReplacementPlugin(/moment\/locale$/, new RegExp('^' + languages.join('|') + '$')),
         new webpack.ContextReplacementPlugin(/locales$/, new RegExp(languages.join('|'))),
-        new UnusedFilesWebpackPlugin(),
-      ]
+    ]
 };

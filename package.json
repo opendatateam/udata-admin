@@ -4,7 +4,6 @@
   "description": "Admin interface for udata",
   "author": "Axel Haustant",
   "license": "MIT",
-  "main": "index.js",
   "scripts": {
     "assets:watch": "webpack --progress --watch",
     "assets:dev": "webpack --progress",
@@ -17,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/etalab/udata.git"
+    "url": "http://github.com/opendatateam/udata-admin.git"
   },
   "devDependencies": {
     "babel-core": "^6.10.4",
@@ -82,7 +81,6 @@
     "bootstrap-slider": "~7.1.0",
     "chart.js": "^1.1.1",
     "diff": "^2.2.3",
-    "jQuery.dotdotdot": "BeSite/jQuery.dotdotdot#v1.7.4",
     "fine-uploader": "~5.11.10",
     "font-awesome": "^4.6.3",
     "handlebars": "^4.0.6",
@@ -105,9 +103,7 @@
     "sortablejs": "^1.4.2",
     "source-sans-pro": "^2.0.10",
     "spin.js": "^2.3.2",
-    "string_score": "^0.1.22",
     "swagger-client": "2.1.13",
-    "swagger-ui": "2.2.10",
     "tv4": "^1.2.7",
     "velocity-animate": "^1.2.3",
     "vue": "1.0.26",

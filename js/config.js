@@ -2,11 +2,11 @@
  * The current user data
  */
 export const user = {
-  id: userEl.getAttribute('content'),
-  slug: userEl.dataset.slug,
-  first_name: userEl.dataset.first_name,
-  last_name: userEl.dataset.last_name,
-  roles: userEl.dataset.roles.split(','),
+  id: 1,
+  slug: 'first-last',
+  first_name: 'first',
+  last_name: 'last',
+  roles: ['admin'],
 }
 
 /**

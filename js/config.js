@@ -38,7 +38,7 @@ module.exports = {
   /**
    * The API Swagger specifications URL
    */
-  api_specs: 'https://next.data.gouv.fr/api/1/swagger.json',
+  api_specs: '/api/1/swagger.json',
 
   /**
    * The theme static root URL

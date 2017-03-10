@@ -1,3 +1,13 @@
+const hidpi = (window.devicePixelRatio > 1 || (
+    window.matchMedia &&
+    window.matchMedia('(-webkit-min-device-pixel-ratio: 1.25),(min-resolution: 120dpi)').matches)
+)
+
+const tiles_attributions = '&copy;' + [
+    '<a href="http://openstreetmap.org/copyright">OpenStreetMap</a>',
+    '<a href="https://cartodb.com/attributions">CartoDB</a>'
+].join('/')
+
 module.exports = {
   /**
   * The current user data
@@ -58,18 +68,12 @@ module.exports = {
   /**
    * Detect HiDPI screens
    */
-  hidpi: (window.devicePixelRatio > 1 || (
-      window.matchMedia &&
-      window.matchMedia('(-webkit-min-device-pixel-ratio: 1.25),(min-resolution: 120dpi)').matches)
-  ),
+  hidpi: hidpi,
 
   /**
    * Attributions for map tiles
    */
-  tiles_attributions: '&copy;' + [
-      '<a href="http://openstreetmap.org/copyright">OpenStreetMap</a>',
-      '<a href="https://cartodb.com/attributions">CartoDB</a>'
-  ].join('/'),
+  tiles_attributions: tiles_attributions,
 
   /**
    * Map tiles URL

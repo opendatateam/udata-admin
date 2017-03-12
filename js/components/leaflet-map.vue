@@ -36,7 +36,16 @@ export default {
             if (this.map.tap) this.map.tap.disable();
         }
 
-        L.tileLayer(config.tiles_url, config.tiles_config).addTo(this.map);
+        const hidpi = (window.devicePixelRatio > 1 || (
+            window.matchMedia &&
+            window.matchMedia('(-webkit-min-device-pixel-ratio: 1.25),(min-resolution: 120dpi)').matches)
+        );
+
+        const { url, hiDPIUrl, subdomains, attributions } = config.tiles_config;
+        const tilesUrl = hiDPIUrl && hidpi ? hiDPIUrl : url;
+        const attribution = '&copy;'+ attributions.map(attrib => `<a href="${attrib.url}">${attrib.name}</a>`).join('/')
+
+        L.tileLayer(tilesUrl, { subdomains, attribution }).addTo(this.map);
     },
     watch: {
         geojson: function(json) {

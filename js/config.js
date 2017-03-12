@@ -1,13 +1,3 @@
-const hidpi = (window.devicePixelRatio > 1 || (
-    window.matchMedia &&
-    window.matchMedia('(-webkit-min-device-pixel-ratio: 1.25),(min-resolution: 120dpi)').matches)
-)
-
-const tiles_attributions = '&copy;' + [
-    '<a href="http://openstreetmap.org/copyright">OpenStreetMap</a>',
-    '<a href="https://cartodb.com/attributions">CartoDB</a>'
-].join('/')
-
 module.exports = {
   /**
    * Map debug features on Webpack DEBUG flag
@@ -54,13 +44,13 @@ module.exports = {
    */
   is_delete_me_enabled: true,
 
-  /**
-   * Map tiles URL
-   */
-  tiles_url: `https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}${hidpi ? '@2x' : ''}.png`,
-
-  /**
-   * Leaflet base config
-   */
-  tiles_config: {subdomains: 'abcd', attribution: tiles_attributions},
+  tiles_config: {
+    url: 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png',
+    hiDPIUrl: 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}@2x.png',
+    subdomains: 'abcd',
+    attributions: [
+      { name: 'OpenStreetMap', url: 'http://openstreetmap.org/copyright' },
+      { name: 'CartoDB', url: 'https://cartodb.com/attributions' }
+    ]
+  }
 }

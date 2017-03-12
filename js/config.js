@@ -10,17 +10,6 @@ const tiles_attributions = '&copy;' + [
 
 module.exports = {
   /**
-  * The current user data
-  */
-  user: {
-    id: 1,
-    slug: 'first-last',
-    first_name: 'first',
-    last_name: 'last',
-    roles: ['admin'],
-  },
-
-  /**
    * Map debug features on Webpack DEBUG flag
    */
   debug: DEBUG,
@@ -64,16 +53,6 @@ module.exports = {
    * Whether the 'delete me' feature is enabled or not.
    */
   is_delete_me_enabled: true,
-
-  /**
-   * Detect HiDPI screens
-   */
-  hidpi: hidpi,
-
-  /**
-   * Attributions for map tiles
-   */
-  tiles_attributions: tiles_attributions,
 
   /**
    * Map tiles URL

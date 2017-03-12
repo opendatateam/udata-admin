@@ -1,4 +1,4 @@
-import config from 'config';
+import config from 'config.lookup';
 
 /**
  * Resolve placeholder for a given type

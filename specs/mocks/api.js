@@ -1,4 +1,4 @@
-import config from 'config';
+import config from 'config.lookup';
 import raw_specs from 'specs/swagger/raw.json';
 
 // Mock the API and the Swagger specs

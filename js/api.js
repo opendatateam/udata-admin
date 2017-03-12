@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import SwaggerClient from 'swagger-client';
-import config from 'config';
+import config from 'config.lookup';
 import log from 'logger';
 
 /**
@@ -41,7 +41,7 @@ LangParameter.prototype.apply = function(obj) {
 
 const API = new SwaggerClient({
     debug: config.debug,
-    url: config.api_specs,
+    url: config.apiSpecs,
     useJQuery: true,
     success() {
         this.readyCallbacks.forEach(callback => {

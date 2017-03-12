@@ -50,7 +50,7 @@
 <script>
 import Organization from 'models/organization';
 import placeholders from 'helpers/placeholders';
-import config from 'config';
+import config from 'config.lookup';
 
 export default {
     props: {
@@ -78,7 +78,7 @@ export default {
             return this.organization.logo;
         },
         certified_stamp: function() {
-            return `${config.theme_static}img/certified-stamp.png`;
+            return `${config.themeStatic}img/certified-stamp.png`;
         }
     },
     created: function() {

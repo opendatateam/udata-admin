@@ -1,5 +1,5 @@
 import Raven from 'raven-js';
-import config from 'config';
+import config from 'config.lookup';
 
 if (config.sentry) {
     const options = {

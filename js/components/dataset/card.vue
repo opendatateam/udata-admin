@@ -79,7 +79,7 @@
 import Dataset from 'models/dataset';
 import DatasetFilters from 'components/dataset/filters';
 import placeholders from 'helpers/placeholders';
-import config from 'config';
+import config from 'config.lookup';
 
 const MASK = [
     'id', 'title', 'description', 'metrics', 'organization',
@@ -109,7 +109,7 @@ export default {
             return this.dataset.organization.logo;
         },
         certified: function() {
-            return `${config.theme_static}img/certified-stamp.png`;
+            return `${config.themeStatic}img/certified-stamp.png`;
         },
         spatial_label: function() {
 

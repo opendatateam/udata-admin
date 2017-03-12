@@ -50,7 +50,7 @@
 
 <script>
 import $ from 'jquery';
-import config from 'config';
+import config from 'config.lookup';
 import {_} from 'i18n';
 import {FieldComponentMixin} from 'components/form/base-field';
 import commonmark from 'helpers/commonmark';

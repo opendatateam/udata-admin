@@ -3,7 +3,7 @@
  */
 import i18next from 'i18next';
 import moment from 'moment';
-import config from 'config';
+import config from 'config.lookup';
 
 export const NAMESPACE = 'udata';
 export const lang = config.lang;

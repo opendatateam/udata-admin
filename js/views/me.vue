@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import config from 'config';
+import config from 'config.lookup';
 import moment from 'moment';
 import API from 'api';
 import {PageList} from 'models/base';
@@ -38,7 +38,7 @@ export default  {
                 label: this._('Edit'),
                 icon: 'edit',
                 method: this.edit
-            }].concat(config.is_delete_me_enabled ? [{
+            }].concat(config.isDeleteMeEnabled ? [{
                 label: this._('Delete'),
                 icon: 'trash',
                 method: this.confirm_delete

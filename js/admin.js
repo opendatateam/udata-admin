@@ -12,7 +12,7 @@ import 'babel-polyfill';
 import 'bootstrap';
 
 import Vue from 'vue';
-import config from 'config';
+import config from 'config.lookup';
 import router from 'admin.routes';
 
 // Ensure retrocompatibily for 0.12.2 replace behavior

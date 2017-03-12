@@ -1,4 +1,4 @@
-import config from 'config';
+import config from 'config.lookup';
 import Vue from 'vue';
 import validator from 'models/validator';
 

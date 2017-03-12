@@ -9,12 +9,12 @@ const config = require('./config.json')
 
 const proxy = httpProxy.createProxyServer({})
 
-proxy.on('proxyReq', (proxyReq) => proxyReq.setHeader('X-API-KEY', config.API_KEY))
+proxy.on('proxyReq', (proxyReq) => proxyReq.setHeader('X-API-KEY', config.apiKey))
 
 const app = express()
 
 app.get('/api/1/swagger.json', (req, res, next) => {
-  request(config.API_ROOT_URL + '/swagger.json')
+  request(config.apiRootUrl + '/swagger.json')
     .then(resp => {
       if (!resp.ok || !resp.body || !resp.body.definitions) {
         throw new Error('Bad swagger definition')
@@ -25,7 +25,12 @@ app.get('/api/1/swagger.json', (req, res, next) => {
     })
     .catch(next)
 })
-app.use('/api/1', (req, res) => proxy.web(req, res, { changeOrigin: true, target: config.API_ROOT_URL }))
+app.use('/api/1', (req, res) => proxy.web(req, res, { changeOrigin: true, target: config.apiRootUrl }))
+
+app.get('/config.js', (req, res) => {
+  const content = `window.udataConfig = ${JSON.stringify(config)};`
+  res.type('application/javascript').send(content)
+})
 
 app.use(webpackMiddleware(webpack(webpackConfig), {
   publicPath: '/dist'

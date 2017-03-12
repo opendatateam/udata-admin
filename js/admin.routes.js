@@ -1,12 +1,12 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import config from 'config';
+import config from 'config.lookup';
 
 Vue.use(VueRouter);
 
 const router = new VueRouter({
     history: true,
-    root: config.admin_root
+    root: config.adminRoot
 });
 
 router.map({

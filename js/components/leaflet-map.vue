@@ -3,7 +3,7 @@
 </template>
 <script>
 import L from 'leaflet';
-import config from 'config';
+import config from 'config.lookup';
 
 const INITIAL_SETTINGS = {center: [42, 2.4], zoom: 4, zoomControl: false};
 
@@ -41,7 +41,7 @@ export default {
             window.matchMedia('(-webkit-min-device-pixel-ratio: 1.25),(min-resolution: 120dpi)').matches)
         );
 
-        const { url, hiDPIUrl, subdomains, attributions } = config.tiles_config;
+        const { url, hiDPIUrl, subdomains, attributions } = config.tilesConfig;
         const tilesUrl = hiDPIUrl && hidpi ? hiDPIUrl : url;
         const attribution = '&copy;'+ attributions.map(attrib => `<a href="${attrib.url}">${attrib.name}</a>`).join('/')
 

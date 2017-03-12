@@ -58,7 +58,7 @@ import Reuse from 'models/reuse';
 import reuse_types from 'models/reuse_types';
 import placeholders from 'helpers/placeholders';
 import moment from 'moment';
-import config from 'config';
+import config from 'config.lookup';
 
 const MASK = [
     'id',
@@ -88,7 +88,7 @@ export default {
     },
     computed: {
         certified: function() {
-            return `${config.theme_static}img/certified-stamp.png`;
+            return `${config.themeStatic}img/certified-stamp.png`;
         },
         owner_avatar: function() {
             if (this.reuse.organization) {

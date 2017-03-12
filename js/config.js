@@ -25,19 +25,9 @@ module.exports = {
   theme_static: '/',
 
   /**
-   * The static assets root URL
-   */
-  static_root: '/',
-
-  /**
    * The administration root URL
    */
   admin_root: '/en/admin',
-
-  /**
-   * The authentification URL for logins
-   */
-  auth_url: '/en/login',
 
   /**
    * Whether the 'delete me' feature is enabled or not.

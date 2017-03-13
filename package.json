@@ -7,7 +7,7 @@
   "scripts": {
     "assets:watch": "webpack --progress --watch",
     "assets:dev": "webpack --progress",
-    "assets:build": "webpack -p --progress",
+    "assets:build": "webpack -p --progress --config webpack.config.prod.js",
     "build": "npm run assets:build",
     "test": "npm run test:unit",
     "test:watch": "export NODE_ENV=test && WATCH=true karma start",

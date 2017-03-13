@@ -7,11 +7,12 @@
   "adminRoot": "/en/admin",
   "isDeleteMeEnabled": true,
   "tilesConfig": {
-    "url": "https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png",
-    "subdomains": "abc",
+    "url": "https://cartodbbasemaps{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+    "hiDPIUrl": "https://cartodbbasemaps{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}@2x.png",
+    "subdomains": "abcd",
     "attributions": [
       { "name": "OpenStreetMap", "url": "http://openstreetmap.org/copyright" },
-      { "name": "OSM France", "url": "https://openstreetmap.fr" }
+      { "name": "CartoDB", "url": "https://cartodb.com/attributions" }
     ]
   }
 }

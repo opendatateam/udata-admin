@@ -158,7 +158,7 @@ describe('Badges', function() {
         const payload = JSON.stringify({kind: 'badge-1'});
         const request = this.requests[0];
 
-        expect(request.url).to.equal('http://localhost/identifier/?lang=en');
+        expect(request.url).to.contain('/identifier/?lang=en');
         expect(request.method).to.equal('POST');
         expect(request.requestBody).to.equal(payload);
 
@@ -178,7 +178,7 @@ describe('Badges', function() {
 
         const request = this.requests[0];
 
-        expect(request.url).to.equal('http://localhost/identifier/badge-1/?lang=en');
+        expect(request.url).to.contain('/identifier/badge-1/?lang=en');
         expect(request.method).to.equal('DELETE');
 
         request.respond(204, {'Content-Type': 'application/json'}, '');

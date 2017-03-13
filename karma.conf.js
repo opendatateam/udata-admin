@@ -39,6 +39,7 @@ module.exports = function(config) {
                 ],
                 alias: {
                     'api': 'specs/mocks/api',
+                    'config.lookup': 'config.json'
                 }
             },
             watch: WATCH,

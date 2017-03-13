@@ -2,7 +2,6 @@
   "apiRootUrl": "https://next.data.gouv.fr/api/1",
   "apiKey": "YOUR_USER_API_KEY",
   "lang": "en",
-  "title": "Admin Udata",
   "apiSpecs": "/api/1/swagger.json",
   "themeStatic": "/",
   "adminRoot": "/en/admin",
